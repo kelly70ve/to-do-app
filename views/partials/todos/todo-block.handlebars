@@ -1,9 +1,9 @@
-<li>
+<li class="m-2">
 	{{text}}
 
-	<button class="change-complete" data-id="{{id}}" data-complete="{{complete}}">
-		{{#if complete}}COMPLETE{{/if}}
+	<button class="change-complete btn btn-success text-monospace" data-id="{{id}}" data-complete="{{complete}}">
+		{{#if complete}}Complete{{/if}}
 	</button>
 
-	<button class="delete-todo" data-id="{{this.id}}">DELETE!</button>
+	<button class="delete-todo btn btn-danger text-monospace" data-id="{{this.id}}">Delete</button>
 </li>

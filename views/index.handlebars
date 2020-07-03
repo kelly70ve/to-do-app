@@ -1,38 +1,47 @@
-<h1>Todo List</h1>
-
-<h2>Todos!</h2>
-
-<ul>
-  {{#each todos}}
-    {{#unless complete}}
-      {{> todos/todo-block complete=true}}
-    {{/unless}}
-  {{/each}}
-</ul>
-
-<h2>Done</h2>
-
-<ul>
-  {{#each todos}}
-    {{#if complete}}
-      {{> todos/todo-block complete=false}}
-    {{/if}}
-  {{/each}}
-</ul>
-
-<h2>Add a Todo</h2>
-<form class="create-form">
-
-  <div class="form-group">
-    <label for="ca">Todo:</label>
-    <input type="text" id="ca" name="name">
+<div class="jumbotron jumbotron-fluid bg-info text-white">
+  <div class="container ">
+    <h1 class="display-4 text-monospace text-center">My Todos</h1>
   </div>
+</div>
 
-  {{!-- <div class="form-group">
-    <label for="sleepy">Sleepy?</label><br>
-    <input type="radio" name="sleepy" value="1" checked> Sleepy!<br>
-    <input type="radio" name="sleepy" value="0"> Awake
-  </div> --}}
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h2 class="text-monospace">Need Todo</h2>
 
-  <button type="submit">Add Todo</button>
-</form>
+      <ol class="text-monospace">
+        {{#each todos}}
+        {{#unless complete}}
+        {{> todos/todo-block complete=true}}
+        {{/unless}}
+        {{/each}}
+      </ol>
+    </div>
+    <div class="col">
+      <h2 class="text-monospace">Done</h2>
+
+      <ol class="text-monospace">
+        {{#each todos}}
+        {{#if complete}}
+        {{> todos/todo-block complete=false}}
+        {{/if}}
+        {{/each}}
+      </ol>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+
+      <h2 class="text-monospace">Add a Todo</h2>
+      <form class="create-form">
+
+        <div class="form-group">
+          <label for="ca" class="text-monospace">Todo:</label>
+          <input type="text" id="ca" name="name">
+        </div>
+
+        <button type="submit" class="btn btn-info text-monospace">Add Todo</button>
+      </form>
+    </div>
+  </div>
+</div>
