@@ -20,13 +20,14 @@ module.exports = function(app) {
       var todosObject = {
         todos: data
       };
-      console.log(todosObject);
       res.render("index", todosObject);
     });
   });
 
   app.post("/api/todos", function(req, res) {
-
+    db.Todo.create(req.body).then(function(result) {
+      res.json({ id: result.insertId });
+    });
   });
 
   app.put("/api/todos/:id", function(req, res) {

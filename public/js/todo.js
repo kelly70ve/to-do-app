@@ -21,22 +21,26 @@ $(function() {
     );
   });
 
+  // ****************
+  // POST
+  // ****************
+
   $(".create-form").on("submit", function(event) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
 
-    var newCat = {
-      name: $("#ca").val().trim(),
-      sleepy: $("[name=sleepy]:checked").val().trim()
+    var newTodo = {
+      text: $("#ca").val().trim(),
+      complete: false
     };
 
     // Send the POST request.
-    $.ajax("/api/cats", {
+    $.ajax("/api/todos", {
       type: "POST",
-      data: newCat
+      data: newTodo
     }).then(
       function() {
-        console.log("created new cat");
+        console.log("created new todo");
         // Reload the page to get the updated list
         location.reload();
       }
