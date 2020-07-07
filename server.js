@@ -14,6 +14,11 @@ var db = require("./models");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+// Static directory 
+// Mount the middleware at "/static" to serve static content only when their request path is prefixed with "/static". 
+// REF: https://stackoverflow.com/questions/5924072/express-js-cant-get-my-static-files-why
+app.use("/public", express.static(__dirname + '/public'))
+
 
 // Set Handlebars.
 var exphbs = require("express-handlebars");
