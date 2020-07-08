@@ -48,6 +48,12 @@ module.exports = function(app) {
   });
   
   app.delete("/api/todos/:id", function(req, res) {
-
+    db.Todo.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbTodo) {
+      res.json(dbTodo);
+    });
   });
 };

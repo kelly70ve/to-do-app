@@ -50,7 +50,11 @@ $(function() {
     );
   });
 
-  $(".delete-cat").on("click", function(event) {
+  // ****************
+  // DELTE
+  // ****************
+
+  $(".delete-todo").on("click", function(event) {
     var id = $(this).data("id");
 
     // Send the DELETE request.
@@ -58,7 +62,7 @@ $(function() {
       type: "DELETE"
     }).then(
       function() {
-        console.log("deleted cat", id);
+        console.log("deleted todo", id);
         // Reload the page to get the updated list
         location.reload();
       }
