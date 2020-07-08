@@ -1,23 +1,23 @@
 {
   "development": {
-    "username": "root",
-    "password": "*0penx2",
-    "database": "todo_db",
-    "host": "127.0.0.1",
+    "username": "itn7ob65abaakuqw",
+    "password": "b9o1eidbkon7x49o",
+    "database": "nhkrv2xik12bn271",
+    "host": "vvfv20el7sb2enn3.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   },
   "test": {
-    "username": "root",
-    "password": "*0penx2",
-    "database": "todo_db",
-    "host": "127.0.0.1",
+    "username": "itn7ob65abaakuqw",
+    "password": "b9o1eidbkon7x49o",
+    "database": "nhkrv2xik12bn271",
+    "host": "vvfv20el7sb2enn3.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": "*0penx2",
-    "database": "todo_db",
-    "host": "127.0.0.1",
+    "username": "itn7ob65abaakuqw",
+    "password": "b9o1eidbkon7x49o",
+    "database": "nhkrv2xik12bn271",
+    "host": "vvfv20el7sb2enn3.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   }
 }
