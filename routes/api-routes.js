@@ -31,7 +31,20 @@ module.exports = function(app) {
   });
 
   app.put("/api/todos/:id", function(req, res) {
-
+    db.Todo.update({
+      complete: req.body.complete
+    }, {
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbTodo) {
+      res.json(dbTodo);
+    })
+      .catch(function(err) {
+      // Whenever a validation or flag fails, an error is thrown
+      // We can "catch" the error to prevent it from being "thrown", which could crash our node app
+        res.json(err);
+      });
   });
   
   app.delete("/api/todos/:id", function(req, res) {

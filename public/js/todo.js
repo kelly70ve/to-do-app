@@ -1,20 +1,23 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function() {
-  $(".change-sleep").on("click", function(event) {
+  // ****************
+  // PUT
+  // ****************
+  $(".change-complete").on("click", function(event) {
     var id = $(this).data("id");
-    var newSleep = $(this).data("newsleep");
+    var complete = $(this).data("complete");
 
-    var newSleepState = {
-      sleepy: newSleep
+    var completeObj = {
+      complete: complete
     };
 
     // Send the PUT request.
-    $.ajax("/api/cats/" + id, {
+    $.ajax("/api/todos/" + id, {
       type: "PUT",
-      data: newSleepState
+      data: completeObj
     }).then(
       function() {
-        console.log("changed sleep to", newSleep);
+        console.log("Change complete to: " + completeObj);
         // Reload the page to get the updated list
         location.reload();
       }
@@ -51,7 +54,7 @@ $(function() {
     var id = $(this).data("id");
 
     // Send the DELETE request.
-    $.ajax("/api/cats/" + id, {
+    $.ajax("/api/todos/" + id, {
       type: "DELETE"
     }).then(
       function() {
